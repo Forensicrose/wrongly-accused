@@ -5,11 +5,11 @@ const app = express()
 app.set('view engine', 'pug')
 
 app.get('/', (request, response) => {
-  response.render('index')
+  response.render('getAllCrimes')
 })
 
 app.get('/getAllCrimes', (request, response) => {
-  response.render('getAllCrimes')
+  response.render('')
 })
 
 
