@@ -13,7 +13,6 @@ app.get('/getAllCrimes', (request, response) => {
 })
 
 
-
 app.listen(1337, () => {
   // eslint-disable-next-line no-console
   console.log('listening on port 1337...')
