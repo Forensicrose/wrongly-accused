@@ -5,12 +5,17 @@ const app = express()
 app.set('view engine', 'pug')
 
 app.get('/', (request, response) => {
-  response.render('getAllCrimes')
+  response.render('homepage')
 })
 
-app.get('/getAllCrimes', (request, response) => {
-  response.render('')
+app.get('/crimes', (request, response) => {
+  response.render('allCrimes')
 })
+
+app.get('/crimes/:names', (request, response) => {
+  response.render('crimesByName')
+})
+
 
 
 app.listen(1337, () => {
