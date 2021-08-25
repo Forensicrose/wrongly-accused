@@ -12,8 +12,8 @@ app.get('/crimes', (request, response) => {
   response.render('allCrimes')
 })
 
-app.get('/crimes/:names', (request, response) => {
-  response.render('crimesByName')
+app.get('/crimes/:title', (request, response) => {
+  response.render('crimesByTitle')
 })
 
 
