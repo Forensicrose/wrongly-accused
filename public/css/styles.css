@@ -1,0 +1,13 @@
+body {
+  background-color: antiquewhite;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+h1 {
+  color: palevioletred;
+  font-size: 30;
+}
+
+hr {
+  border-style: dashed;
+}

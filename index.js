@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 
 app.set('view engine', 'pug')
+app.use(express.static('public'))
+app.set('view engine', 'pug')
 
 
 // documentation is under this route. As project progress, additional routes will be created as shown below
