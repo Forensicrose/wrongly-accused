@@ -4,10 +4,11 @@ const app = express()
 
 app.set('view engine', 'pug')
 app.use(express.static('public'))
-app.set('view engine', 'pug')
+app.use(express.json())
 
 
-// documentation is under this route. As project progress, additional routes will be created as shown below
+
+// documentation is under this route. As project progresses, additional routes will be created as shown below
 app.get('/crimes', (request, response) => {
   response.render('crimes')
 })
