@@ -4,19 +4,20 @@ const app = express()
 
 app.set('view engine', 'pug')
 
-app.get('/', (request, response) => {
-  response.render('homepage')
-})
 
+// documentation is under this route. As project progress, additional routes will be created as shown below
 app.get('/crimes', (request, response) => {
-  response.render('allCrimes')
+  response.render('crimes')
 })
 
-app.get('/crimes/:title', (request, response) => {
-  response.render('crimesByTitle')
+// future routes
+app.get('/crimes/:id', (request, response) => {
+  response.render('crimesById')
 })
 
-
+app.post('/crimes', (request, response) => {
+  response.render('createNewCrime')
+})
 
 app.listen(1337, () => {
   // eslint-disable-next-line no-console
