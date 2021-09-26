@@ -1,4 +1,5 @@
 const express = require('express')
+const crimeRouter = require('./routes/crime')
 
 const app = express()
 
@@ -7,22 +8,13 @@ app.use(express.static('public'))
 app.use(express.json())
 
 
-
-// documentation is under this route. As project progresses, additional routes will be created as shown below
-app.get('/crimes', (request, response) => {
-  response.render('crimes')
+app.get('/', (req, res) => {
+  res.render('crimes')
 })
 
-// future routes
-app.get('/crimes/:id', (request, response) => {
-  response.render('crimesById')
-})
+app.use('/api/crime/', crimeRouter)
 
-app.post('/crimes', (request, response) => {
-  response.render('createNewCrime')
-})
-
-app.listen(1337, () => {
+app.listen(3000, () => {
   // eslint-disable-next-line no-console
-  console.log('listening on port 1337...')
+  console.log('listening on port 3000...')
 })
