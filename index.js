@@ -1,0 +1,28 @@
+const express = require('express')
+
+const app = express()
+
+app.set('view engine', 'pug')
+app.use(express.static('public'))
+app.use(express.json())
+
+
+
+// documentation is under this route. As project progresses, additional routes will be created as shown below
+app.get('/crimes', (request, response) => {
+  response.render('crimes')
+})
+
+// future routes
+app.get('/crimes/:id', (request, response) => {
+  response.render('crimesById')
+})
+
+app.post('/crimes', (request, response) => {
+  response.render('createNewCrime')
+})
+
+app.listen(1337, () => {
+  // eslint-disable-next-line no-console
+  console.log('listening on port 1337...')
+})

@@ -1,0 +1,88 @@
+html 
+    head 
+        <link rel="stylesheet" href="css/styles.css"/>
+    body 
+            h1 GET '/crimes'
+            hr
+            h2 Get all crimes of the wrongly accused 
+            p This GET route will present all crimes 
+            br
+            p Route: http://localhost:1337/crimes
+            br
+            p Example Output: 
+                
+                div 
+                pre
+                    |[{
+                    |       id: 1
+                    |       Title: Central Park Five
+                    |       Date of Crime: April 19, 1989
+                    |       Story: Five young men were accused of the rape and murder...
+                    | }]
+            
+            
+            
+            br
+            h1 GET '/crimes/:id'
+            hr
+            h2 Get crimes of the wrongly accused by id
+            p This GET route will present crimes based on id
+            br
+            p Route: http://localhost:1337/crimes/:id
+            br
+            p Example Output: 
+                
+                div 
+                pre
+                    |[{
+                    |       id: 1
+                    |       Title: Central Park Five
+                    |       Date of Crime: April 19, 1989
+                    |       Story: Five young men were accused of the rape and murder...
+                    | }]
+
+            
+            br
+            h1 POST '/crimes'
+            hr
+            h2 Creates a new crime of the wrongly accused
+            p This allows for the creation of a new crime based on what is entered in the body.  
+            br
+            p Route: http://localhost:1337/crimes
+            br
+            p Headers: content-type - application/json 
+            br
+            p Body
+            pre
+                    |[{
+                    |       "Title": "The Murder of Rhonda Morrison"
+                    |       "Date of Crime": "November 1, 1989"
+                    |       "Story": "A man was convicted of a murder he did not commit that hinged on the testimony of a convicted felon..."
+                    | }]
+                    
+            p Example Output: 
+                
+                div 
+                pre
+                    |[{
+                    |       "id": 2
+                    |       "Title": "The Murder of Rhonda Morrison"
+                    |       "Date of Crime": "November 1, 1989"
+                    |       "Story": "A man was convicted of a murder he did not commit that hinged on the testimony of a convicted felon..."
+                    |       "createdAt": "2021-12-24T00:07:15.399Z"
+                    |       "updatedAt": "2021-12-24T00:07:15.399Z"
+                    | }]
+
+
+            
+            br
+            h1 DELETE '/crimes/:id'
+            hr
+            h2 Deletes crimes of the wrongly accused by id
+            p This DELETE route will delete crimes associated with a given id
+            br
+            p Route: http://localhost:1337/crimes/:id
+            br
+            p Example Output: Successfully deleted the crime with ID: 2
+                
+            

@@ -1,0 +1,32 @@
+{
+  "name": "wrongly-accused-api",
+  "version": "1.0.0",
+  "description": "This API will present stories of the wrongly convicted",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.12",
+    "pug-lint": "^2.6.0"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint:pug && npm run lint:eslint",
+    "lint:pug": "pug-lint .",
+    "lint:eslint": "eslint --format codeframe ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Forensicrose/wrongly-accused-api.git"
+  },
+  "author": "Janeisha Hutley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Forensicrose/wrongly-accused-api/issues"
+  },
+  "homepage": "https://github.com/Forensicrose/wrongly-accused-api#readme"
+}
