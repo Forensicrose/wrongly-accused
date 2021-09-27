@@ -1,4 +1,4 @@
-const crimes = (connection, Sequelize) => {
+const Crimes = (connection, Sequelize) => {
   return connection.define('crimes', {
     id: { type: Sequelize.INTERGER, autoIncrement: true, primaryKey: true },
     title: { type: Sequelize.STRING },
@@ -7,4 +7,4 @@ const crimes = (connection, Sequelize) => {
   }, { parnoid: true })
 }
 
-module.exports = crimes
+module.exports = Crimes
