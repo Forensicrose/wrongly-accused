@@ -11,16 +11,17 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "eslint": "^7.32.0",
     "nodemon": "^2.0.12",
     "pug-lint": "^2.6.0"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npm run lint:pug && npm run lint:eslint",
-    "lint:pug": "pug-lint .",
-    "lint:eslint": "eslint --format codeframe ."
+    "dev": "./node_modules/.bin/nodemon index.js",
+    "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
+    "lint": "./node_modules/.bin/eslint --format codeframe .",
+    "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
+    "test": "./node_modules/.bin/mocha tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
