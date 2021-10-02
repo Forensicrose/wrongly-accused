@@ -7,4 +7,4 @@ const connection = new Sequelize('crime', 'criminal', 'Cr!m3$', {
 
 const Crimes = CrimesModel(connection, Sequelize)
 
-module.exports = Crimes
+module.exports = { Crimes, Op: Sequelize.Op }
