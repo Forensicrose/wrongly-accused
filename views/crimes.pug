@@ -2,12 +2,12 @@ html
     head 
         <link rel="stylesheet" href="css/styles.css"/>
     body 
-            h1 GET '/crimes'
+            h1 GET '/api/crime'
             hr
             h2 Get all crimes of the wrongly accused 
             p This GET route will present all crimes 
             br
-            p Route: http://localhost:1337/crimes
+            p Route: http://localhost:1337/api/crime
             br
             p Example Output: 
                 
@@ -23,12 +23,12 @@ html
             
             
             br
-            h1 GET '/crimes/:id'
+            h1 GET '/api/crime/:identifier'
             hr
-            h2 Get crimes of the wrongly accused by id
-            p This GET route will present crimes based on id
+            h2 Get crimes of the wrongly accused by identifier
+            p This GET route will present crimes based on fuzzy match and by title or date of crime or story
             br
-            p Route: http://localhost:1337/crimes/:id
+            p Route: http://localhost:1337/api/crime/Central
             br
             p Example Output: 
                 
@@ -43,12 +43,12 @@ html
 
             
             br
-            h1 POST '/crimes'
+            h1 POST '/api/crime'
             hr
             h2 Creates a new crime of the wrongly accused
             p This allows for the creation of a new crime based on what is entered in the body.  
             br
-            p Route: http://localhost:1337/crimes
+            p Route: http://localhost:1337/api/crime
             br
             p Headers: content-type - application/json 
             br
