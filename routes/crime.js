@@ -1,14 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const { getAllCrimes, getCrimeById } = require('../controllers/crimes')
 
 
-router.get('/', (req, res) => {
-  res.send('This will get one crime')
-})
+router.get('/', getAllCrimes)
 
-router.get('/:id', (req, res) => {
-  res.send('This will get one crime')
-})
+router.get('/:id', getCrimeById)
 
 router.post('/', (req, res) => {
   res.send('Create a crime')

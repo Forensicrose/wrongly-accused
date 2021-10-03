@@ -6,17 +6,23 @@ const getAllCrimes = async (req, res) => {
   return res.send(allCrimes)
 }
 
-const getCrimeByIdentifier = async (req, res) => {
+// const getCrimeByIdentifier = async (req, res) => {
+//   try {
+//     const { identifier } = req.params
+//     const oneCrime = await models.Crime.findOne({
+//       where: {
+//         [models.Op.or]: [
+//           { id: identifier },
+//           { title: { [models.Op.like]: `%${identifier}%` } },
+//           { story: { [models.Op.like]: `%${identifier}%` } }
+//         ]
+//       }
+//     })
+const getCrimeById = async (req, res) => {
   try {
-    const { identifier } = req.params
+    const { id } = req.params
     const oneCrime = await models.Crime.findOne({
-      where: {
-        [models.Op.or]: [
-          { id: identifier },
-          { title: { [models.Op.like]: `%${identifier}%` } },
-          { story: { [models.Op.like]: `%${identifier}%` } }
-        ]
-      }
+      where: { id },
     })
 
     return oneCrime
@@ -27,4 +33,4 @@ const getCrimeByIdentifier = async (req, res) => {
   }
 }
 
-module.exports = { getAllCrimes, getCrimeByIdentifier }
+module.exports = { getAllCrimes, getCrimeById }

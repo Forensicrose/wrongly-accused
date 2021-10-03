@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/crime/', crimeRouter)
 
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('listening on port 3000...')
