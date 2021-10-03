@@ -4,7 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('crimes', {
       id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-      title: { type: Sequelize.STRING },
+      title: { type: Sequelize.TEXT('medium') },
       dateOfCrime: { type: Sequelize.STRING },
       story: { type: Sequelize.TEXT('medium)') },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
