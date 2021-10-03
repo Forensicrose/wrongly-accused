@@ -19,13 +19,6 @@ const getCrimeByIdentifier = async (req, res) => {
       }
     })
 
-    // const getCrimeById = async (req, res) => {
-    //   try {
-    //     const { id } = req.params
-    //     const oneCrime = await models.Crimes.findOne({
-    //       where: { id },
-    //     })
-
     return oneCrime
       ? res.send(oneCrime)
       : res.sendStatus(404)
@@ -35,10 +28,10 @@ const getCrimeByIdentifier = async (req, res) => {
 }
 
 const createNewCrime = async (req, res) => {
-  const { title, dateOfCrime, story } = res.body
+  const { title, dateOfCrime, story } = req.body
 
   // eslint-disable-next-line max-len
-  if (!title || !dateOfCrime || !story) return res.status(400).send('The following fields are required: title, dateOfCrime, and story.')
+  if (!title || !dateOfCrime || !story) return res.status(400).send('The following fields are required: title, dateOfCrime, story.')
 
   const newCrime = await models.Crimes.create({ title, dateOfCrime, story })
 
@@ -46,3 +39,4 @@ const createNewCrime = async (req, res) => {
 }
 
 module.exports = { getAllCrimes, getCrimeByIdentifier, createNewCrime }
+
