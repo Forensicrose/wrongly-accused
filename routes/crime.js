@@ -1,14 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const { getAllCrimes, getCrimeById } = require('../controllers/crimes')
+const { getAllCrimes, getCrimeByIdentifier, createNewCrime } = require('../controllers/crimes')
 
 
 router.get('/', getAllCrimes)
 
-router.get('/:id', getCrimeById)
+router.get('/:identifier', getCrimeByIdentifier)
 
-router.post('/', (req, res) => {
-  res.send('Create a crime')
-})
+router.post('/', createNewCrime)
+
 
 module.exports = router
