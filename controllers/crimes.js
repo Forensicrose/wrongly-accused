@@ -14,6 +14,7 @@ const getCrimeByIdentifier = async (req, res) => {
         [models.Op.or]: [
           { id: identifier },
           { title: { [models.Op.like]: `%${identifier}%` } },
+          { dateOfCrime: { [models.Op.like]: `%${identifier}%` } },
           { story: { [models.Op.like]: `%${identifier}%` } }
         ]
       }
