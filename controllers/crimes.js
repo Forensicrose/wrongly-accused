@@ -62,7 +62,7 @@ const deleteCrimeById = async (req, res) => {
     await crime.destroy()
 
     return res.send({
-      message: `crime ${id} has been deleted`
+      message: `Successfully deleted the crime with ${id}`
     })
   } catch (err) {
     return res.status(400).send({
