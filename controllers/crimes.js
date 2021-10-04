@@ -38,5 +38,38 @@ const createNewCrime = async (req, res) => {
   return res.status(201).send(newCrime)
 }
 
-module.exports = { getAllCrimes, getCrimeByIdentifier, createNewCrime }
+const deleteCrimeById = async (req, res) => {
+  const { id } = req.body
+
+  if (!id) {
+    return res.status(400).send({
+      message: 'Please provide the id of the crime you are trying to delete.'
+    })
+  }
+
+  const crime = await models.Crimes.findOne({
+    where: {
+      id
+    }
+  })
+
+  if (!crime) {
+    return res.status(400).send({
+      message: `No crime exists with the id ${id}`
+    })
+  }
+  try {
+    await crime.destroy()
+
+    return res.send({
+      message: `crime ${id} has been deleted`
+    })
+  } catch (err) {
+    return res.status(400).send({
+      message: `Error ${err.message}`
+    })
+  }
+}
+
+module.exports = { getAllCrimes, getCrimeByIdentifier, createNewCrime, deleteCrimeById }
 
