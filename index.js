@@ -1,5 +1,6 @@
 const express = require('express')
 const crimeRouter = require('./routes/crime')
+const cors = require('cors')
 
 const app = express()
 const port = 3000
@@ -7,7 +8,7 @@ const port = 3000
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 app.use(express.json())
-
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.render('crimes')

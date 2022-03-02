@@ -11,4 +11,5 @@ router.post('/', createNewCrime)
 
 router.delete('/:id', deleteCrimeById)
 
+// router.get('/', getByStory)
 module.exports = router
